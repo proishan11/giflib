@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group 'com.proishan11'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-webmvc:4.2.2.RELEASE'
+}
