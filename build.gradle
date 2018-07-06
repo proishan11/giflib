@@ -1,5 +1,6 @@
-plugins {
+plugins{
     id 'java'
+    id 'org.springframework.boot' version '1.4.3.RELEASE'
 }
 
 group 'com.proishan11'
@@ -12,5 +13,5 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework:spring-webmvc:4.2.2.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE'
 }
