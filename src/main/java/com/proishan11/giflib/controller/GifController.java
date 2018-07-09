@@ -1,6 +1,8 @@
 package com.proishan11.giflib.controller;
 
+import com.proishan11.giflib.data.CategoryRepository;
 import com.proishan11.giflib.data.GifRepository;
+import com.proishan11.giflib.model.Category;
 import com.proishan11.giflib.model.Gif;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,11 +33,6 @@ public class GifController {
         Gif gif = gifRepository.findByName(name);
         modelMap.put("gif", gif);
         return "gif-details";
-    }
-
-    @RequestMapping("/categories")
-    public String categories(){
-        return "category";
     }
 
 }
