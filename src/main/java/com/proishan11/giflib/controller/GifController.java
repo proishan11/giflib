@@ -1,6 +1,8 @@
 package com.proishan11.giflib.controller;
 
+import com.proishan11.giflib.data.GifRepository;
 import com.proishan11.giflib.model.Gif;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,10 @@ import java.time.LocalDate;
 
 @Controller
 public class GifController {
+
+    @Autowired
+    private GifRepository gifRepository;
+
     @RequestMapping("/")
     public String listGifs() {
         return "home";
@@ -17,8 +23,7 @@ public class GifController {
 
     @RequestMapping("/gif")
     public String gifDetails(ModelMap modelMap) {
-        Gif gif = new Gif("giphy", LocalDate.of(2015,2,13),
-                "Ishan Singh", true);
+        Gif gif = gifRepository.findByName("penrose-triangle-illusion-gif");
         modelMap.put("gif", gif);
         return "gif-details";
     }
